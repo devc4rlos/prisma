@@ -1,13 +1,13 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/blank-livewire-starter-kit",
+    "name": "devc4rlos/prisma",
     "type": "project",
-    "description": "The official Laravel starter kit for Livewire.",
+    "description": "Prisma — a unified, private media diary for movies, series, anime, and manga.",
     "keywords": [
         "laravel",
         "framework"
     ],
-    "license": "MIT",
+    "license": "AGPL-3.0-or-later",
     "require": {
         "php": "^8.3",
         "laravel/framework": "^13.17",
@@ -31,8 +31,11 @@
     "autoload": {
         "psr-4": {
             "App\\": "app/",
+            "Application\\": "src/Application/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeders/",
+            "Domain\\": "src/Domain/",
+            "Infrastructure\\": "src/Infrastructure/"
         }
     },
     "autoload-dev": {
