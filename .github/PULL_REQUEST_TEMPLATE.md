@@ -29,8 +29,7 @@
 - **Laravel Pint** (`vendor/bin/pint --test`): passed.
 - **Larastan / PHPStan** (`vendor/bin/phpstan analyse`): passed, level XX, 0 errors.
 - **Pest** (`vendor/bin/pest`): XX passed.
-- **`npm run check`** (lint/formatting): passed.
-- **`npm run types:check`** (`tsc --noEmit`): passed.
+- **`npm run build`** (frontend/assets build): passed.
 
 ## Security considerations
 
