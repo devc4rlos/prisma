@@ -249,9 +249,10 @@ Business logic lives under `src/`, separated from the framework scaffolding in
 | `Infrastructure\` | `src/Infrastructure/` | Framework, persistence and external service adapters            |
 
 The `Domain` layer is framework-agnostic and holds the base building blocks —
-`Entity`, `ValueObject`, `AggregateRoot` and `DomainException` — that concrete
-domain models extend. Dependencies point inward: `Infrastructure` may depend on
-`Application` and `Domain`, but the domain never depends on the framework.
+`Entity`, `ValueObject`, `AggregateRoot`, `DomainEvent` and `DomainException` —
+that concrete domain models extend. Dependencies point inward: `Infrastructure`
+may depend on `Application` and `Domain`, but the domain never depends on the
+framework.
 
 ## Product vision (roadmap)
 
