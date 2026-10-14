@@ -215,6 +215,10 @@ resources/
 routes/
 ├── console.php         # console routes
 └── web.php             # web routes
+src/                    # DDD layers (PSR-4: Domain\, Application\, Infrastructure\)
+├── Application/        # application services: use cases and workflows
+├── Domain/             # domain model: entities, value objects, aggregates, rules
+└── Infrastructure/     # framework, persistence and external adapters
 tests/                  # Pest tests (Unit and Feature)
 compose.yaml            # Docker orchestration for Laravel Sail
 pint.json               # Laravel Pint configuration
@@ -232,6 +236,22 @@ by Tailwind CSS and bundled through Vite.
 Persistence uses **Eloquent** models backed by SQLite (default) or MySQL (Sail).
 Because `phpunit.xml` points to in-memory SQLite, the test suite is fast and
 independent from the database server.
+
+### Domain-Driven Design
+
+Business logic lives under `src/`, separated from the framework scaffolding in
+`app/`, and is exposed through three PSR-4 namespaces:
+
+| Namespace         | Path                  | Responsibility                                                  |
+| ----------------- | --------------------- | --------------------------------------------------------------- |
+| `Domain\`         | `src/Domain/`         | Entities, value objects, aggregates and domain rules            |
+| `Application\`    | `src/Application/`    | Use cases orchestrating domain and infrastructure               |
+| `Infrastructure\` | `src/Infrastructure/` | Framework, persistence and external service adapters            |
+
+The `Domain` layer is framework-agnostic and holds the base building blocks —
+`Entity`, `ValueObject`, `AggregateRoot` and `DomainException` — that concrete
+domain models extend. Dependencies point inward: `Infrastructure` may depend on
+`Application` and `Domain`, but the domain never depends on the framework.
 
 ## Product vision (roadmap)
 
