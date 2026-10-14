@@ -1,3 +1,21 @@
 {
-    "preset": "laravel"
+    "preset": "laravel",
+    "exclude": ["bootstrap/cache", "storage"],
+    "rules": {
+        "declare_strict_types": true,
+        "strict_comparison": true,
+        "visibility_required": true,
+        "modernize_types_casting": true,
+        "date_time_immutable": true,
+        "ordered_imports": {
+            "sort_algorithm": "alpha"
+        },
+        "no_useless_else": true,
+        "concat_space": {
+            "spacing": "one"
+        },
+        "trailing_comma_in_multiline": {
+            "elements": ["arrays"]
+        }
+    }
 }
